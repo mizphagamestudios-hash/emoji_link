@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ClueMoji</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="assets/brand/cluemoji-icon.svg">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <style>
+        body {
+            /* Match the page colour (src/theme.js) at the canvas edges. */
+            background-color: #b39be6;
+            overflow: hidden;
+            margin: auto;
+            width: 100%;
+        }
+
+        /* Available before Phaser loads: the studio logo over a progress bar
+           in the game's palette (src/theme.js) - lavender page, purple fill. */
+        #loader {
+            --logo: min(63.504vw, 375.84px, 58.32vh);
+            --bar: min(64vw, 300px);
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            padding-bottom: 10vh;
+            gap: 20px;
+            background: linear-gradient(#b39be6, #9f85dc);
+            transition: opacity 380ms ease-in-out;
+        }
+
+        #loader.done {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #loader-logo {
+            flex-shrink: 0;
+            width: var(--logo);
+            height: calc(var(--logo) * 217 / 375);
+            background: url('assets/loader/logo.png') center / 154% auto no-repeat;
+        }
+
+        #loader-track {
+            flex-shrink: 0;
+            position: relative;
+            box-sizing: border-box;
+            width: var(--bar);
+            height: 26px;
+            padding: 4px;
+            border: 2px solid #d8c8eb;
+            border-radius: 20px;
+            background: #eee4fb;
+            box-shadow: inset 0 2px 3px #2a1a5220, 0 2px 0 #ffffff60,
+                        0 0 12px #7950c424;
+        }
+
+        #loader-fill {
+            position: relative;
+            width: 0;
+            height: 100%;
+            border-radius: 14px;
+            background: linear-gradient(#9b74e0, #7950c4 55%, #6640ad);
+            box-shadow: inset 0 -2px 0 #4a2d8a, inset 0 1px 0 #c9b2f5;
+            overflow: hidden;
+            transition: width 150ms linear;
+        }
+
+        #loader-fill::before {
+            content: '';
+            position: absolute;
+            inset: 2px 5px auto;
+            height: 4px;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #ffffffb0, #ffffff25);
+        }
+        #loader-caption {
+            margin-top: -14px;
+            font: 16px 'FredokaOne_Regular', sans-serif;
+            color: #2a1a52;
+            letter-spacing: .3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader" aria-label="Loading">
+        <div id="loader-logo"></div>
+        <div id="loader-track"><div id="loader-fill"></div></div>
+        <div id="loader-caption">Loading…</div>
+    </div>
+
+    <script>
+        // Asset loading fills the bar halfway, then
+        // it eases the rest of the way - quicker the less is left - holds full
+        // for a beat, and only then is the title built under it.
+        var LOADER = { share: 0.5, fill: 600, least: 250, hold: 120, settle: 50, fade: 380 };
+
+        function loaderFill(share, ms, ease) {
+            var fill = document.getElementById('loader-fill');
+            if (!fill) return;
+            if (ms !== undefined) fill.style.transition = 'width ' + ms + 'ms ' + ease;
+            fill.style.width = (Math.max(0, Math.min(1, share)) * 100) + '%';
+        }
+
+        // BootScene reports how much has arrived (0..1)
+        var loaderShare = 0;
+        window.setLoaderProgress = function(progress) {
+            loaderShare = Math.max(0, Math.min(1, progress)) * LOADER.share;
+            loaderFill(loaderShare);
+        };
+
+        // everything is in: run the bar to full, then hand over
+        window.finishLoader = function(done) {
+            var ms = Math.max(LOADER.least, LOADER.fill * (1 - loaderShare));
+            loaderFill(1, ms, 'cubic-bezier(0.39, 0.575, 0.565, 1)');
+            setTimeout(done, ms + LOADER.hold);
+        };
+
+        // the title is up underneath: fade the page off it, then drop it
+        window.hideLoader = function() {
+            var loader = document.getElementById('loader');
+            if (!loader || loader.classList.contains('done')) return;
+            setTimeout(function() {
+                loader.classList.add('done');
+                setTimeout(function() {
+                    if (loader.parentNode) loader.parentNode.removeChild(loader);
+                }, LOADER.fade + 20);
+            }, LOADER.settle);
+        };
+    </script>
+
+    <script>
+        // Load Web Fonts
+        var fonts = ['FredokaOne_Regular.otf'];
+
+        var fontDiv = document.createElement('fonts-to-load');
+        document.body.appendChild(fontDiv);
+
+        for (var i = 0; i < fonts.length; i++) {
+            fonts[i] = fonts[i].substr(0, fonts[i].lastIndexOf('.'));
+
+            var div = document.createElement('font-div');
+            div.id = fonts[i];
+            div.style.fontFamily = fonts[i];
+            div.style.position = 'absolute';
+            div.style.top = 0;
+            div.style.left = 0;
+            div.style.visibility = 'hidden';
+            div.innerHTML = 'Hello world.';
+            fontDiv.appendChild(div);
+        }
+
+        setTimeout(function() {
+            document.body.removeChild(fontDiv);
+        }, 500);
+    </script>
+<script type="text/javascript" src="bundle.min.js"></script></body>
+
+</html>
