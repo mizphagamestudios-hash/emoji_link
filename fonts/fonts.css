@@ -2,3 +2,13 @@
     font-family: 'FredokaOne_Regular';
     src: url('../fonts/FredokaOne_Regular.otf') format("opentype")
 }
+
+/* Figtree, a clean geometric sans in every weight from Light to Black (one
+   variable font; SIL Open Font License, Figtree-OFL.txt) - for small counts,
+   where Fredoka One's single heavy weight is too much. Bundled, so it looks
+   the same on every phone. */
+@font-face {
+    font-family: 'Figtree';
+    src: url('../fonts/Figtree.ttf') format("truetype");
+    font-weight: 300 900;
+}

@@ -1,0 +1,968 @@
+{
+  "store": {
+    "width": 381,
+    "height": 639,
+    "textureScale": 2,
+    "controls": {
+      "close": [
+        305,
+        38,
+        367,
+        105
+      ],
+      "buy-100": [
+        239,
+        218,
+        348,
+        279
+      ],
+      "buy-200": [
+        239,
+        287,
+        348,
+        350
+      ],
+      "buy-500": [
+        239,
+        357,
+        348,
+        419
+      ],
+      "buy-1000": [
+        239,
+        425,
+        348,
+        490
+      ],
+      "unlock": [
+        239,
+        506,
+        348,
+        577
+      ],
+      "restore-link": [
+        109,
+        585,
+        307,
+        617
+      ],
+      "balance": [
+        181,
+        135,
+        264,
+        181
+      ]
+    },
+    "sourceFile": "03-store.png",
+    "sourceBox": [
+      32,
+      80,
+      413,
+      719
+    ],
+    "patches": {
+      "balance": [
+        181,
+        135,
+        264,
+        181
+      ],
+      "price-100": [
+        102,
+        248,
+        222,
+        276
+      ],
+      "price-200": [
+        102,
+        318,
+        222,
+        346
+      ],
+      "price-500": [
+        102,
+        387,
+        222,
+        415
+      ],
+      "price-1000": [
+        102,
+        457,
+        222,
+        485
+      ]
+    },
+    "sprites": {
+      "close": {
+        "frame": "store-close",
+        "box": [
+          301.0,
+          34.0,
+          371.0,
+          109.0
+        ]
+      },
+      "buy-100": {
+        "frame": "store-buy-100",
+        "box": [
+          235.0,
+          214.0,
+          352.0,
+          283.0
+        ]
+      },
+      "buy-200": {
+        "frame": "store-buy-200",
+        "box": [
+          235.0,
+          283.0,
+          352.0,
+          354.0
+        ]
+      },
+      "buy-500": {
+        "frame": "store-buy-500",
+        "box": [
+          235.0,
+          353.0,
+          352.0,
+          423.0
+        ]
+      },
+      "buy-1000": {
+        "frame": "store-buy-1000",
+        "box": [
+          235.0,
+          421.0,
+          352.0,
+          494.0
+        ]
+      },
+      "unlock": {
+        "frame": "store-unlock",
+        "box": [
+          235.0,
+          502.0,
+          352.0,
+          581.0
+        ]
+      },
+      "restore-link": {
+        "frame": "store-restore-link",
+        "box": [
+          105.0,
+          581.0,
+          311.0,
+          621.0
+        ]
+      }
+    },
+    "eyes": [
+      {
+        "frame": "store-eye-0",
+        "box": [
+          45.0,
+          43.5,
+          63.0,
+          64.0
+        ]
+      },
+      {
+        "frame": "store-eye-1",
+        "box": [
+          63.0,
+          39.5,
+          80.5,
+          59.5
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "width": 476,
+    "height": 770,
+    "textureScale": 2,
+    "controls": {
+      "close": [
+        385,
+        50,
+        461,
+        128
+      ],
+      "music-toggle": [
+        278,
+        181,
+        433,
+        256
+      ],
+      "sound-toggle": [
+        278,
+        276,
+        433,
+        354
+      ],
+      "nav-home": [
+        36,
+        394,
+        168,
+        557
+      ],
+      "nav-reset": [
+        171,
+        394,
+        306,
+        557
+      ],
+      "nav-shop": [
+        309,
+        394,
+        444,
+        557
+      ],
+      "done": [
+        49,
+        562,
+        429,
+        690
+      ],
+      "privacy-link": [
+        149,
+        691,
+        332,
+        732
+      ]
+    },
+    "sourceFile": "04-settings.png",
+    "sourceBox": [
+      2,
+      74,
+      478,
+      844
+    ],
+    "patches": {
+      "music-toggle": [
+        278,
+        181,
+        433,
+        256
+      ],
+      "sound-toggle": [
+        278,
+        276,
+        433,
+        354
+      ]
+    },
+    "sprites": {
+      "close": {
+        "frame": "settings-close",
+        "box": [
+          381.0,
+          46.0,
+          465.0,
+          132.0
+        ]
+      },
+      "music-toggle": {
+        "frame": "settings-music-toggle",
+        "box": [
+          274.0,
+          177.0,
+          437.0,
+          260.0
+        ]
+      },
+      "sound-toggle": {
+        "frame": "settings-sound-toggle",
+        "box": [
+          274.0,
+          272.0,
+          437.0,
+          358.0
+        ]
+      },
+      "nav-home": {
+        "frame": "settings-nav-home",
+        "box": [
+          28.0,
+          387.0,
+          176.0,
+          563.0
+        ]
+      },
+      "nav-reset": {
+        "frame": "settings-nav-reset",
+        "box": [
+          164.0,
+          387.0,
+          313.0,
+          563.0
+        ]
+      },
+      "nav-shop": {
+        "frame": "settings-nav-shop",
+        "box": [
+          302.0,
+          387.0,
+          450.0,
+          563.0
+        ]
+      },
+      "done": {
+        "frame": "settings-done",
+        "box": [
+          33.0,
+          546.0,
+          445.0,
+          706.0
+        ]
+      },
+      "privacy-link": {
+        "frame": "settings-privacy-link",
+        "box": [
+          145.0,
+          687.0,
+          336.0,
+          736.0
+        ]
+      }
+    },
+    "eyes": [
+      {
+        "frame": "settings-eye-0",
+        "box": [
+          57.5,
+          55.5,
+          77.5,
+          78.5
+        ]
+      },
+      {
+        "frame": "settings-eye-1",
+        "box": [
+          80.0,
+          50.5,
+          99.5,
+          73.0
+        ]
+      }
+    ]
+  },
+  "how": {
+    "width": 387,
+    "height": 640,
+    "textureScale": 2,
+    "controls": {
+      "close": [
+        312,
+        39,
+        375,
+        106
+      ],
+      "lets-play": [
+        29,
+        510,
+        357,
+        612
+      ]
+    },
+    "sourceFile": "05-how-to-play.png",
+    "sourceBox": [
+      3,
+      79,
+      390,
+      719
+    ],
+    "sprites": {
+      "close": {
+        "frame": "how-close",
+        "box": [
+          308.0,
+          35.0,
+          379.0,
+          110.0
+        ]
+      },
+      "lets-play": {
+        "frame": "how-lets-play",
+        "box": [
+          13.0,
+          494.0,
+          373.0,
+          628.0
+        ]
+      }
+    },
+    "eyes": [
+      {
+        "frame": "how-eye-0",
+        "box": [
+          41.0,
+          45.5,
+          59.5,
+          66.0
+        ]
+      },
+      {
+        "frame": "how-eye-1",
+        "box": [
+          59.0,
+          41.5,
+          77.0,
+          61.5
+        ]
+      }
+    ]
+  },
+  "stars": {
+    "width": 376,
+    "height": 639,
+    "textureScale": 2,
+    "controls": {
+      "close": [
+        299,
+        38,
+        361,
+        105
+      ],
+      "video-stars": [
+        26,
+        305,
+        352,
+        408
+      ],
+      "pack-500": [
+        26,
+        415,
+        352,
+        531
+      ],
+      "back-link": [
+        102,
+        547,
+        281,
+        594
+      ],
+      "balance": [
+        176,
+        205,
+        260,
+        254
+      ]
+    },
+    "sourceFile": "06-get-stars.png",
+    "sourceBox": [
+      4,
+      80,
+      380,
+      719
+    ],
+    "patches": {
+      "balance": [
+        176,
+        205,
+        260,
+        254
+      ]
+    },
+    "sprites": {
+      "close": {
+        "frame": "stars-close",
+        "box": [
+          295.0,
+          34.0,
+          365.0,
+          109.0
+        ]
+      },
+      "video-stars": {
+        "frame": "stars-video-stars",
+        "box": [
+          22.0,
+          301.0,
+          356.0,
+          412.0
+        ]
+      },
+      "pack-500": {
+        "frame": "stars-pack-500",
+        "box": [
+          22.0,
+          411.0,
+          356.0,
+          535.0
+        ]
+      },
+      "back-link": {
+        "frame": "stars-back-link",
+        "box": [
+          98.0,
+          543.0,
+          285.0,
+          598.0
+        ]
+      }
+    },
+    "eyes": [
+      {
+        "frame": "stars-eye-0",
+        "box": [
+          39.5,
+          44.5,
+          57.5,
+          65.0
+        ]
+      },
+      {
+        "frame": "stars-eye-1",
+        "box": [
+          57.5,
+          40.5,
+          75.5,
+          60.5
+        ]
+      }
+    ]
+  },
+  "hearts": {
+    "width": 381,
+    "height": 639,
+    "textureScale": 2,
+    "controls": {
+      "close": [
+        306,
+        38,
+        372,
+        105
+      ],
+      "heart-continue": [
+        23,
+        306,
+        363,
+        407
+      ],
+      "heart-video": [
+        23,
+        413,
+        363,
+        509
+      ],
+      "heart-retry": [
+        23,
+        513,
+        363,
+        624
+      ]
+    },
+    "sourceFile": "07-out-of-hearts.png",
+    "sourceBox": [
+      2,
+      80,
+      383,
+      719
+    ],
+    "sprites": {
+      "close": {
+        "frame": "hearts-close",
+        "box": [
+          302.0,
+          34.0,
+          376.0,
+          109.0
+        ]
+      },
+      "heart-continue": {
+        "frame": "hearts-heart-continue",
+        "box": [
+          19.0,
+          302.0,
+          367.0,
+          411.0
+        ]
+      },
+      "heart-video": {
+        "frame": "hearts-heart-video",
+        "box": [
+          19.0,
+          409.0,
+          367.0,
+          513.0
+        ]
+      },
+      "heart-retry": {
+        "frame": "hearts-heart-retry",
+        "box": [
+          19.0,
+          509.0,
+          367.0,
+          628.0
+        ]
+      }
+    },
+    "eyes": [
+      {
+        "frame": "hearts-eye-0",
+        "box": [
+          38.0,
+          45.0,
+          56.0,
+          65.0
+        ]
+      },
+      {
+        "frame": "hearts-eye-1",
+        "box": [
+          55.5,
+          40.5,
+          73.5,
+          60.5
+        ]
+      }
+    ]
+  },
+  "time": {
+    "width": 381,
+    "height": 639,
+    "textureScale": 2,
+    "controls": {
+      "close": [
+        305,
+        37,
+        367,
+        104
+      ],
+      "time-continue": [
+        20,
+        334,
+        361,
+        426
+      ],
+      "time-video": [
+        20,
+        429,
+        361,
+        523
+      ],
+      "time-retry": [
+        20,
+        526,
+        361,
+        623
+      ]
+    },
+    "sourceFile": "08-time-up.png",
+    "sourceBox": [
+      32,
+      81,
+      413,
+      720
+    ],
+    "sprites": {
+      "close": {
+        "frame": "time-close",
+        "box": [
+          301.0,
+          33.0,
+          371.0,
+          108.0
+        ]
+      },
+      "time-continue": {
+        "frame": "time-time-continue",
+        "box": [
+          16.0,
+          330.0,
+          365.0,
+          430.0
+        ]
+      },
+      "time-video": {
+        "frame": "time-time-video",
+        "box": [
+          16.0,
+          425.0,
+          365.0,
+          527.0
+        ]
+      },
+      "time-retry": {
+        "frame": "time-time-retry",
+        "box": [
+          16.0,
+          522.0,
+          365.0,
+          627.0
+        ]
+      }
+    },
+    "eyes": [
+      {
+        "frame": "time-eye-0",
+        "box": [
+          44.5,
+          44.0,
+          62.5,
+          64.5
+        ]
+      },
+      {
+        "frame": "time-eye-1",
+        "box": [
+          62.5,
+          40.0,
+          80.0,
+          60.0
+        ]
+      }
+    ]
+  },
+  "reset": {
+    "width": 376,
+    "height": 639,
+    "textureScale": 2,
+    "controls": {
+      "close": [
+        301,
+        37,
+        363,
+        104
+      ],
+      "keep-playing": [
+        24,
+        389,
+        356,
+        488
+      ],
+      "reset-progress": [
+        24,
+        491,
+        356,
+        590
+      ]
+    },
+    "sourceFile": "09-start-again.png",
+    "sourceBox": [
+      2,
+      81,
+      378,
+      720
+    ],
+    "sprites": {
+      "close": {
+        "frame": "reset-close",
+        "box": [
+          297.0,
+          33.0,
+          367.0,
+          108.0
+        ]
+      },
+      "keep-playing": {
+        "frame": "reset-keep-playing",
+        "box": [
+          20.0,
+          385.0,
+          360.0,
+          492.0
+        ]
+      },
+      "reset-progress": {
+        "frame": "reset-reset-progress",
+        "box": [
+          20.0,
+          487.0,
+          360.0,
+          594.0
+        ]
+      }
+    },
+    "eyes": [
+      {
+        "frame": "reset-eye-0",
+        "box": [
+          40.0,
+          44.5,
+          58.5,
+          65.5
+        ]
+      },
+      {
+        "frame": "reset-eye-1",
+        "box": [
+          58.5,
+          41.0,
+          76.5,
+          61.0
+        ]
+      }
+    ]
+  },
+  "three": {
+    "width": 387,
+    "height": 641,
+    "textureScale": 2,
+    "controls": {
+      "close": [
+        312,
+        38,
+        375,
+        105
+      ]
+    },
+    "sourceFile": "10-three-in-a-row.png",
+    "sourceBox": [
+      3,
+      80,
+      390,
+      721
+    ],
+    "sprites": {
+      "close": {
+        "frame": "three-close",
+        "box": [
+          308.0,
+          34.0,
+          379.0,
+          109.0
+        ]
+      }
+    },
+    "eyes": [
+      {
+        "frame": "three-eye-0",
+        "box": [
+          41.0,
+          45.5,
+          59.5,
+          66.0
+        ]
+      },
+      {
+        "frame": "three-eye-1",
+        "box": [
+          59.0,
+          41.5,
+          77.0,
+          62.0
+        ]
+      }
+    ]
+  },
+  "five": {
+    "width": 377,
+    "height": 639,
+    "textureScale": 2,
+    "controls": {
+      "close": [
+        300,
+        37,
+        362,
+        104
+      ]
+    },
+    "sourceFile": "11-five-in-a-row.png",
+    "sourceBox": [
+      3,
+      81,
+      380,
+      720
+    ],
+    "sprites": {
+      "close": {
+        "frame": "five-close",
+        "box": [
+          296.0,
+          33.0,
+          366.0,
+          108.0
+        ]
+      }
+    },
+    "eyes": [
+      {
+        "frame": "five-eye-0",
+        "box": [
+          40.5,
+          44.5,
+          58.5,
+          65.0
+        ]
+      },
+      {
+        "frame": "five-eye-1",
+        "box": [
+          58.0,
+          40.5,
+          76.0,
+          60.5
+        ]
+      }
+    ]
+  },
+  "chapter": {
+    "width": 380,
+    "height": 640,
+    "textureScale": 2,
+    "controls": {
+      "close": [
+        305,
+        37,
+        371,
+        104
+      ],
+      "collect-bonus": [
+        17,
+        470,
+        375,
+        595
+      ]
+    },
+    "sourceFile": "12-chapter-complete.png",
+    "sourceBox": [
+      3,
+      81,
+      383,
+      721
+    ],
+    "sprites": {
+      "close": {
+        "frame": "chapter-close",
+        "box": [
+          301.0,
+          33.0,
+          375.0,
+          108.0
+        ]
+      },
+      "collect-bonus": {
+        "frame": "chapter-collect-bonus",
+        "box": [
+          13.0,
+          466.0,
+          379.0,
+          599.0
+        ]
+      }
+    },
+    "eyes": [
+      {
+        "frame": "chapter-eye-0",
+        "box": [
+          37.0,
+          45.0,
+          55.0,
+          65.0
+        ]
+      },
+      {
+        "frame": "chapter-eye-1",
+        "box": [
+          55.0,
+          40.5,
+          73.0,
+          61.0
+        ]
+      }
+    ]
+  }
+}

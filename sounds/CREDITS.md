@@ -7,7 +7,8 @@ is always clear where each one came from.
 
 | File | What it is | Source | License |
 |---|---|---|---|
-| `bgm.wav` | "Happy Vibes" by Ruskerdax - the background music | [OpenGameArt](https://opengameart.org/node/160228) | CC0 |
+| `bgm.wav` | the background music | supplied by the game's developer (`bgm.mp3`) | as supplied |
+| `sfx/cheer.wav` | a cheer, as a level is finished | supplied by the game's developer (`cheer.mp3`) | as supplied |
 | `sfx/ting.wav` | `glass_001` from Interface Sounds by Kenney - a rating star appearing | [kenney.nl](https://kenney.nl/assets/interface-sounds) | CC0 |
 | `sfx/coin.wav` | "Plingy Coin" by Fupi - a star landing in the counter | [OpenGameArt](https://opengameart.org/content/plingy-coin) | CC0 |
 | `sfx/clack.wav` | the slate's clapstick snapping shut: `impactWood_light_002` layered with `impactPlank_medium_000`, from Impact Sounds by Kenney | [kenney.nl](https://kenney.nl/assets/impact-sounds) | CC0 |
@@ -16,11 +17,16 @@ is always clear where each one came from.
 
 ## How the recordings were prepared
 
-- **`bgm.wav`** - decoded from the original MP3 with macOS `afconvert`; the
-  28 ms of silence the MP3 encoder puts at the start was trimmed, and the last
-  20 ms crossfaded into the first, so the loop has no gap or click where it
-  joins. Then mixed to mono at 32 kHz, 16-bit. It is a WAV and not an .m4a
-  because AAC adds silence at both ends, which a loop plays as a hiccup.
+- **`bgm.wav`** - decoded from the supplied MP3 with macOS `afconvert` and
+  mixed to mono at 32 kHz, 16-bit. Its first 0.89 s - silence, then the
+  opening clap - and the 2.17 s of near-silence after its fade-out were cut;
+  it fades in over 40 ms on the soft pad that ran under that clap, and its
+  last 20 ms are crossfaded into its first, so the loop has no gap or click
+  where it joins. It is a WAV and not an .m4a because AAC adds silence at both ends,
+  which a loop plays as a hiccup.
+- **`sfx/cheer.wav`** - decoded from the supplied MP3, mixed to mono at
+  44.1 kHz, set to a peak of -1.7 dB (the level-finish sound it replaced) and
+  faded out over its last 20 ms.
 - **`sfx/ting.wav`, `sfx/coin.wav`** - mixed to mono, trimmed of silence,
   faded out over their last 20 ms and set to a peak of -6 dB.
 - **`sfx/clack.wav`** - the two hits lined up on their peaks (the plank at

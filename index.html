@@ -8,91 +8,128 @@
     <link rel="icon" type="image/svg+xml" href="assets/brand/cluemoji-icon.svg">
     <link rel="stylesheet" href="fonts/fonts.css">
     <style>
-        body {
+        html, body {
+            height: 100%;
             /* Match the page colour (src/theme.js) at the canvas edges. */
-            background-color: #b39be6;
+            background-color: #74d3fa;
             overflow: hidden;
-            margin: auto;
+            margin: 0;
             width: 100%;
         }
 
-        /* Available before Phaser loads: the studio logo over a progress bar
-           in the game's palette (src/theme.js) - lavender page, purple fill. */
+        #game-root { position: fixed; inset: 0; overflow: hidden; }
+        #game-root canvas { display: block; }
+
+        /* The approved preload composition, before Phaser is available. */
         #loader {
-            --logo: min(63.504vw, 375.84px, 58.32vh);
-            --bar: min(64vw, 300px);
+            --logo: min(76vw, 43vh);
+            --bar: min(70vw, 39.4vh);
             position: fixed;
             inset: 0;
             z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-            padding-bottom: 10vh;
-            gap: 20px;
-            background: linear-gradient(#b39be6, #9f85dc);
+            overflow: hidden;
+            background: #52c9ef url('assets/loader/sky-clouds.webp') center / cover no-repeat;
             transition: opacity 380ms ease-in-out;
         }
-
-        #loader.done {
-            opacity: 0;
-            pointer-events: none;
-        }
-
+        #loader.done { opacity: 0; pointer-events: none; }
         #loader-logo {
-            flex-shrink: 0;
+            position: absolute;
+            top: 25.5%;
+            left: 50%;
+            transform: translateX(-50%);
             width: var(--logo);
-            height: calc(var(--logo) * 217 / 375);
-            background: url('assets/loader/logo.png') center / 154% auto no-repeat;
+            aspect-ratio: 943 / 545;
+            background: url('assets/loader/logo-navy.webp') center / contain no-repeat;
         }
-
         #loader-track {
-            flex-shrink: 0;
-            position: relative;
+            position: absolute;
+            top: 55.6%;
+            left: 50%;
+            transform: translateX(-50%);
             box-sizing: border-box;
             width: var(--bar);
-            height: 26px;
-            padding: 4px;
-            border: 2px solid #d8c8eb;
-            border-radius: 20px;
-            background: #eee4fb;
-            box-shadow: inset 0 2px 3px #2a1a5220, 0 2px 0 #ffffff60,
-                        0 0 12px #7950c424;
+            height: min(10.6vw, 6vh);
+            padding: min(1.1vw, .62vh);
+            border: min(.65vw, .37vh) solid #fffdf3;
+            border-radius: 999px;
+            background: linear-gradient(#efdfbf, #fff8e8 35%, #f2e3c4);
+            box-shadow: inset 0 3px 4px #ae956b50, 0 2px 0 #e3d3b0,
+                        0 7px 12px #17668a26;
         }
-
         #loader-fill {
             position: relative;
+            box-sizing: border-box;
             width: 0;
             height: 100%;
-            border-radius: 14px;
-            background: linear-gradient(#9b74e0, #7950c4 55%, #6640ad);
-            box-shadow: inset 0 -2px 0 #4a2d8a, inset 0 1px 0 #c9b2f5;
+            border-radius: 999px;
+            background: linear-gradient(#acff33, #58ee0b 32%, #24d600 65%, #0bbb0b);
+            box-shadow: inset 0 2px 3px #efffb8, inset 0 -3px 2px #109a1c80;
             overflow: hidden;
             transition: width 150ms linear;
         }
-
         #loader-fill::before {
             content: '';
             position: absolute;
-            inset: 2px 5px auto;
-            height: 4px;
-            border-radius: 12px;
-            background: linear-gradient(90deg, #ffffffb0, #ffffff25);
+            top: 8%; left: 4%;
+            width: 13%; height: 15%;
+            border-radius: 999px;
+            background: #ffffffd9;
+            z-index: 2;
+        }
+        /* The fill is always moving, however the loading is going: soft
+           candy stripes slide along it, one stripe's width each beat... */
+        #loader-fill::after {
+            --stripe: min(6.4vw, 3.6vh);
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 999px;
+            background-image: linear-gradient(135deg,
+                #ffffff40 25%, transparent 25%, transparent 50%,
+                #ffffff40 50%, #ffffff40 75%, transparent 75%);
+            background-size: var(--stripe) var(--stripe);
+            animation: loader-stripes 520ms linear infinite;
+        }
+        @keyframes loader-stripes {
+            from { background-position: 0 0; }
+            to { background-position: var(--stripe) 0; }
+        }
+        /* ...and every so often a gleam of light runs along it */
+        #loader-gleam {
+            position: absolute;
+            top: 0; bottom: 0;
+            left: -45%;
+            width: 40%;
+            z-index: 1;
+            background: linear-gradient(100deg, transparent, #ffffffb0 50%, transparent);
+            animation: loader-gleam 1600ms ease-in-out infinite;
+        }
+        @keyframes loader-gleam {
+            0% { left: -45%; }
+            65%, 100% { left: 110%; }
         }
         #loader-caption {
-            margin-top: -14px;
-            font: 16px 'FredokaOne_Regular', sans-serif;
-            color: #2a1a52;
-            letter-spacing: .3px;
+            position: absolute;
+            top: 63.5%;
+            left: 0; right: 0;
+            text-align: center;
+            font: min(5.3vw, 3vh) 'FredokaOne_Regular', sans-serif;
+            color: #073e79;
+            text-shadow: 0 2px 2px #086f9d30;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            #loader, #loader-fill { transition: none; }
+            #loader-fill::after, #loader-gleam { animation: none; }
+            #loader-gleam { display: none; }
         }
     </style>
 </head>
 
 <body>
+    <div id="game-root"></div>
     <div id="loader" aria-label="Loading">
-        <div id="loader-logo"></div>
-        <div id="loader-track"><div id="loader-fill"></div></div>
+        <div id="loader-logo" role="img" aria-label="Mizpha Games"></div>
+        <div id="loader-track"><div id="loader-fill"><div id="loader-gleam"></div></div></div>
         <div id="loader-caption">Loading…</div>
     </div>
 
@@ -138,7 +175,7 @@
 
     <script>
         // Load Web Fonts
-        var fonts = ['FredokaOne_Regular.otf'];
+        var fonts = ['FredokaOne_Regular.otf', 'Figtree.ttf'];
 
         var fontDiv = document.createElement('fonts-to-load');
         document.body.appendChild(fontDiv);
