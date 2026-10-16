@@ -1,7 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect x="4" y="4" width="120" height="120" rx="32" fill="#138b82"/>
-  <rect x="17" y="21" width="94" height="94" rx="26" fill="#0c6c65"/>
-  <rect x="17" y="15" width="94" height="94" rx="26" fill="#ffcf4a"/>
-  <path d="M47 43c0-22 36-22 36 0 0 15-18 14-18 27" fill="none" stroke="#60419d" stroke-width="12" stroke-linecap="round"/>
-  <circle cx="65" cy="88" r="7" fill="#60419d"/>
+  <defs>
+    <linearGradient id="rim" x2="0" y2="1"><stop stop-color="#c5f7ff"/><stop offset=".45" stop-color="#40caff"/><stop offset="1" stop-color="#0764c6"/></linearGradient>
+    <linearGradient id="face" x2=".2" y2="1"><stop stop-color="#62dcff"/><stop offset=".48" stop-color="#12b2f8"/><stop offset="1" stop-color="#0080e6"/></linearGradient>
+    <linearGradient id="gold" x2=".2" y2="1"><stop stop-color="#fff9a4"/><stop offset=".42" stop-color="#ffe14a"/><stop offset="1" stop-color="#ffaf12"/></linearGradient>
+  </defs>
+  <rect x="3" y="5" width="122" height="121" rx="33" fill="#064a99"/>
+  <rect x="3" y="2" width="122" height="120" rx="33" fill="url(#rim)" stroke="#0877cc" stroke-width="2"/>
+  <rect x="9" y="8" width="110" height="108" rx="28" fill="url(#face)" stroke="#a6efff" stroke-width="2"/>
+  <path d="M20 32Q22 18 38 17H86" fill="none" stroke="#e3fcff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+  <path d="M45 44c0-22 38-24 38-2 0 17-19 16-19 32" fill="none" stroke="#07519c" stroke-width="19" stroke-linecap="round" transform="translate(0 3)"/>
+  <path d="M45 44c0-22 38-24 38-2 0 17-19 16-19 32" fill="none" stroke="url(#gold)" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="64" cy="96" r="10" fill="#07519c"/>
+  <circle cx="64" cy="93" r="8" fill="url(#gold)"/>
+  <path d="m99 26 3 9 9 3-9 3-3 9-3-9-9-3 9-3Z" fill="#fffbd5" stroke="#ffcf39" stroke-width="1.5" stroke-linejoin="round"/>
 </svg>
